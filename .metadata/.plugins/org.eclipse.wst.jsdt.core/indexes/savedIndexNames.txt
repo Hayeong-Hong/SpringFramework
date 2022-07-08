@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4011114656.index
+1914870990.index
+3374066203.index
+60364457.index
+1407228139.index
+975537473.index
+3254442011.index
+2924058629.index
