@@ -1,5 +1,8 @@
 package com.spring.boardweb.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,13 +24,16 @@ public class HomeController {
 	//@Autowired //homeService = new HomeServiceImpl();
 	//@Qualifier //같은 모양의 객체가 여러개일때 wired를 사용하고싶으면 사용
 	//객체의 모양과 이름 모두 비교, 같은 모양의 객체가 존재할 떄 이름으로 비교하여 의존성을 주입
-	@Qualifier("homeServiceImpl")
+	@Autowired
 	HomeService homeService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
 		
 		model.addAttribute("hi", "Hello Spring" );
+		
+		//1. Session Scope
+		//System.out.println("session data =======" + session.getAttribute("hello"));
 		
 		return "home";
 	}
@@ -95,5 +101,30 @@ public class HomeController {
 		// 			  주소도 설정한 주소로 변경됨
 		return "redirect:/";
 	}
+	
+	@RequestMapping("/hello.do")
+	public String hello(Model model) {
+		//1. Session Scope
+		//session.setAttribute("hello", "12345");
+		
+		model.addAttribute("hello","0000");
+		
+		return "Hello";
+	}
+	
+	@RequestMapping("getNameList.do")
+		public String getNameList(Model model) {
+			List<HomeVO> resultList = homeService.getNameList();
+			
+			model.addAttribute("nameList", resultList);
+			
+			for(int i=0; i< resultList.size(); i+=1) {
+				System.out.println("firstName = " + resultList.get(i).getFirstName());
+				System.out.println("lastName = " + resultList.get(i).getLastName());
+			}
+			
+			return "getNameList";
+		}
+	
 	
 }
