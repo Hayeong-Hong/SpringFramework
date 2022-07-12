@@ -24,4 +24,35 @@
 		 		FROM T_NAME
 		 ]]>
 		 </select>
+		 
+		 <!-- mybatis에서 파라미터를 꺼내는 방식 #{파라미터키} -->
+		 <insert id="insertName" parameterType="home">
+		 <![CDATA[
+		 	INSERT INTO T_NAME(
+		 		FIRST_NAME,
+		 		LAST_NAME
+		 	)VALUES(
+		 		#{firstName},
+		 		#{lastName}
+		 	)
+		 ]]>
+		 </insert>
+		 
+		 <update id="updateName" parameterType="java.util.Map">
+		 <![CDATA[
+		 	UPDATE T_NAME
+		 		SET FIRST_NAME = #{firstName},
+		 			LAST_NAME = #{lastName}
+		 		WHERE FIRST_NAME = #{originalFirstName}
+		 		  AND LAST_NAME = #{originalLastName}
+		 ]]>
+		 </update>
+		 
+		 <delete id="deleteName" parameterType="home">
+		 <![CDATA[
+		 	DELETE FROM T_NAME
+		 		WHERE FIRST_NAME = #{firstName}
+		 		  AND LAST_NAME = #{lastName}
+		 ]]>
+		 </delete>
 	</mapper>
