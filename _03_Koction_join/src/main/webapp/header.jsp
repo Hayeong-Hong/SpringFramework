@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,8 +29,16 @@
 		<div class="top-bg">
 			<div class="top-navbar">
 				<div class="nav justify-content-end">
-					<a class="nav-link" href="/user/login.do">로그인</a> <a class="nav-link"
-						href="/user/join.do">회원가입</a>
+					<c:choose >
+						<c:when test="${loginUser eq null }">
+							<a class="nav-link" href="/user/loginPage.do">로그인</a> 
+							<a class="nav-link" href="/user/join.do">회원가입</a>
+						</c:when>
+						<c:otherwise>
+							<a class="nav-link" href="/user/mypage.do">${loginUser.userName }</a> 
+							<a class="nav-link" href="/user/logout.do">로그아웃</a>
+						</c:otherwise>
+					</c:choose>
 				</div>
 			</div>
 

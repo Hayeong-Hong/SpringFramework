@@ -20,7 +20,7 @@
 	<!-- DB 연동을 부모컨테이너에 하는 이유는 부모 컨테이너에서 생성하는 객체들이 모델 객체들이기 때문 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/studydb?serverTimezone=UTC"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/koction?serverTimezone=UTC"></property>
 		<property name="username" value="study"></property>
 		<property name="password" value="Gkdud_9117"></property>
 	</bean>

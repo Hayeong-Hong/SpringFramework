@@ -21,4 +21,15 @@ public class UserDAO {
 		return mybatis.selectOne("UserDAO.idCheck", userId);
 	}
 
+	public int pwCheck(UserVO userVO) {
+		// TODO Auto-generated method stub
+		return mybatis.selectOne("UserDAO.pwCheck", userVO);
+	}
+
+	public UserVO login(UserVO userVO) {
+		// TODO Auto-generated method stub
+		return (UserVO)mybatis.selectOne("UserDAO.login", userVO);
+	}
+
+
 }

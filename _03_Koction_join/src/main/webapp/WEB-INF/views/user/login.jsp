@@ -20,20 +20,44 @@
 </style>
 </head>
 <body>
+	<script>
+	$(function(){
+		$("#login-btn").on("click", function(){
+			$.ajax({
+				url : '/user/login.do',
+				type: 'post',
+				data : $('#login-form').serialize(),
+				success : function(obj){
+					const data = JSON.parse(obj);
+					if(data.message=='idFail'){
+						alert("존재하지 않는 아이디 입니다.");
+						return;
+					}else if(data.message=='pwFail'){
+						alert("비밀번호가 틀렸습니다.");
+						return;
+					}
+					location.href = "/index.jsp";
+				},
+				error : function(e){
+					console.log(e);
+			})
+		})
+	})
+	</script>
 	<jsp:include page="${pageContext.request.contextPath }/header.jsp"></jsp:include>
 	 <main>
          <!--내용 부분-->   
         <section>
-            <a href="index.html"><img class="login-logo" src="${pageContext.request.contextPath }/images/main_logo.png" alt="로고"></a>
-            <form action="index_login.html" class="login-form" name="login-form">
+            <a href="${pageContext.request.contextPath }/index.jsp"><img class="login-logo" src="${pageContext.request.contextPath }/images/main_logo.png" alt="로고"></a>
+            <form class="login-form" name="login-form" id="login-form">
                 <fieldset>
                     <div class="login-info">
                         <ul>
                             <li>
-                                <input type="text" id="input-id" value="아이디">
+                                <input type="text" id="input-id" name="userId" required>
                             </li>
                             <li>
-                                <input type="password" id="input-pw" value="********">
+                                <input type="password" id="input-pw" name="userPw" required>
                             </li>
                         </ul>
                     </div>

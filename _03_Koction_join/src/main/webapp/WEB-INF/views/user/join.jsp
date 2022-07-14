@@ -26,7 +26,7 @@
     <main>
          <!--내용 부분-->   
         <section>
-            <a href="/index.do"><img class="login-logo" src="${pageContext.request.contextPath }/images/main_logo.png" alt="로고"></a>
+            <a href="${pageContext.request.contextPath }/index.jsp"><img class="login-logo" src="${pageContext.request.contextPath }/images/main_logo.png" alt="로고"></a>
             <form action="/user/join.do" method="post" class="register-form" name="join-form" id="join-form">
 <!--             <form id="joinForm" action= > -->
                 <fieldset>
@@ -111,7 +111,7 @@
 								.ajax({
 									url : '/user/idCheck.do',
 									type : 'post',
-									data : $("#joinForm").serialize(),
+									data : $("#join-form").serialize(),
 									success : function(obj) {
 										console.log(obj);
 
@@ -126,6 +126,8 @@
 												checkId = true;
 												$("#checkIdbtn").attr(
 														"disabled", true);
+												$("#checkIdbtn").css("background", "rgb(200,200,200)")
+																.css("border", "none");
 											}
 										} else {
 											checkId = false;
@@ -143,12 +145,17 @@
 			$("#userId").on("change", function() {
 				checkId = false;
 				$("#checkIdbtn").attr("disabled", false);
+				$("#checkIdbtn").css("background", "rgb(18,100,100)")
+								.css("border-color", "rgb(18,88,88)");
 			});
 			
-/* 			if(($("#checkIdbtn").disabled)=true){
-			$("#checkIdbtn").css("background", "rgb(200,200,200)")
-							.css("border", "none");
-			}; */
+/*  			if(($("#checkIdbtn").disabled)=true){
+				$("#checkIdbtn").css("background", "rgb(200,200,200)")
+								.css("border-color", "none");
+			}else{
+				$("#checkIdbtn").css("background", "rgb(18,100,100)")
+								.css("border-color", "rgb(18,88,88)");
+			};  */
 			
 			//비밀번호 유효성 검사(정규식 사용)
 			function validatePassword(charactor){
@@ -192,7 +199,7 @@
 			});
 			
 			//회원가입 할 떄 (form submit될 때) 마지막 유효성 검사
-			$("#joinForm").on("submit", function(e){
+			$("#join-form").on("submit", function(e){
 				if(!checkId){
 					alert("아이디 중복체크를 해 주세요.")
 					$("#userId").focus();

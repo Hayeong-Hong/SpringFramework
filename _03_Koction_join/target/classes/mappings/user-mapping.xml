@@ -42,4 +42,22 @@
 				WHERE USER_ID = #{userId}
 		]]>
 		</select>
+		
+		<select id="pwCheck" parameterType="user" resultType="int">
+		<![CDATA[
+			SELECT COUNT(*)
+				FROM T_USER
+				WHERE USER_ID = #{userId}
+				  AND USER_PW = #{userPw}
+		]]>
+		</select>
+		
+		<select id="login" parameterType="user" resultType="user">
+		<![CDATA[
+			SELECT *
+				FROM T_USER
+				WHERE USER_ID = #{userId}
+				  AND USER_PW = #{userPw}
+		]]>
+		</select>
 	</mapper>
