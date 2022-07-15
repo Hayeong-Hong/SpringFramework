@@ -1,6 +1,7 @@
 package com.spring.boardweb.service.board;
 
 import java.util.List;
+import java.util.Map;
 
 import com.spring.boardweb.BoardVO;
 
@@ -17,5 +18,7 @@ public interface BoardService {
 	void deleteBoard(int boardSeq);
 
 	void updateBoard(BoardVO boardVO);
+
+	List<BoardVO> getBoardListSearch(Map<String, String> paramMap);
 
 }

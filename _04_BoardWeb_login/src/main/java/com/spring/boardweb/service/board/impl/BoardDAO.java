@@ -1,6 +1,7 @@
 package com.spring.boardweb.service.board.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +37,17 @@ public class BoardDAO {
 	public void deleteBoard(int boardSeq) {
 		// TODO Auto-generated method stub
 		mybatis.delete("BoardDAO.deleteBoard", boardSeq);
+		mybatis.update("BoardDAO.updateBoardSeq", boardSeq);
 	}
 
 	public void updateBoard(BoardVO boardVO) {
 		// TODO Auto-generated method stub
 		mybatis.update("BoardDAO.updateBoard", boardVO);
+	}
+
+	public List<BoardVO> getBoardListSearch(Map<String, String> paramMap) {
+		// TODO Auto-generated method stub
+		return mybatis.selectList("BoardDAO.getBoardListSearch", paramMap);
 	}
 	
 	

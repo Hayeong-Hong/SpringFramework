@@ -103,5 +103,12 @@ public class UserController {
 		return json;
 	}
 	
+	@RequestMapping("/logout.do")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		
+		return "redirect:/index.jsp";
+	}
+	
 	
 }

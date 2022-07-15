@@ -1,6 +1,7 @@
 package com.spring.boardweb.controller.board;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -78,6 +79,9 @@ public class BoardController {
 	public String deleteBoard(HttpSession session, @RequestParam int boardSeq) {
 		boardService.deleteBoard(boardSeq);
 		
+		//바로 화면으로 이동하면 목록 데이터를 조회하지 못함
+		//return "board/getBoardList";
+		//게시글 목록 데이터르 조회한 후에 화면으로 보내기 위해 redirect:....do를 사용함
 		return "redirect:getBoardList.do";
 	}
 	
@@ -86,6 +90,14 @@ public class BoardController {
 		boardService.updateBoard(boardVO);
 		
 		return "redirect:getBoardList.do";
+	}
+	
+	@RequestMapping("getBoardListSearch.do")
+	public String getBoardListSearch(@RequestParam Map<String, String> paramMap,Model model) {
+		List<BoardVO> searchBoardList = boardService.getBoardListSearch(paramMap);
+		
+		model.addAttribute("boardList", searchBoardList);
+		return "board/getBoardList";
 	}
 
 }

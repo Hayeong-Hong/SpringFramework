@@ -35,7 +35,7 @@
 							<a class="nav-link" href="/user/join.do">회원가입</a>
 						</c:when>
 						<c:otherwise>
-							<a class="nav-link" href="/user/mypage.do">${loginUser.userName }</a> 
+							<a class="nav-link" href="/user/mypage.do">${loginUser.userNm }</a> 
 							<a class="nav-link" href="/user/logout.do">로그아웃</a>
 						</c:otherwise>
 					</c:choose>

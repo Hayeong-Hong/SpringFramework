@@ -24,9 +24,9 @@
 	$(function(){
 		$("#login-btn").on("click", function(){
 			$.ajax({
-				url : '/user/login.do',
-				type: 'post',
-				data : $('#login-form').serialize(),
+				url :'/user/login.do',
+				type : 'post',
+				data : $("#login-form").serialize(),
 				success : function(obj){
 					const data = JSON.parse(obj);
 					if(data.message=='idFail'){
@@ -40,9 +40,10 @@
 				},
 				error : function(e){
 					console.log(e);
-			})
-		})
-	})
+				}
+			});
+		});
+	});
 	</script>
 	<jsp:include page="${pageContext.request.contextPath }/header.jsp"></jsp:include>
 	 <main>
@@ -62,7 +63,7 @@
                         </ul>
                     </div>
                     <div class="login-btn">
-                    	<input type="submit" value="로그인"  id="login-btn">
+                    	<input type="button" value="로그인"  id="login-btn" name="btnLogin">
                     </div>
                     <div class="auto-login">
                         <label class="form-check-label" for="flexSwitchCheckDefault">자동로그인</label>

@@ -1,6 +1,7 @@
 package com.spring.boardweb.service.board.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,6 +48,12 @@ public class BoardServiceImpl implements BoardService{
 	public void updateBoard(BoardVO boardVO) {
 		// TODO Auto-generated method stub
 		boardDAO.updateBoard(boardVO);
+	}
+
+	@Override
+	public List<BoardVO> getBoardListSearch(Map<String, String> paramMap) {
+		// TODO Auto-generated method stub
+		return boardDAO.getBoardListSearch(paramMap);
 	}
 
 }
