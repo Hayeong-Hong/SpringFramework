@@ -22,21 +22,26 @@ public class BoardController {
 	BoardService boardService;
 	
 	@RequestMapping("/getBoardList.do")
-	public String getBoardList(HttpSession session, Model model) {
+	public String getBoardList(HttpSession session, @RequestParam Map<String, String> paramMap, Model model) {
 		UserVO loginUser = (UserVO)session.getAttribute("loginUser");
 		
 		if(loginUser==null) {
 			return "user/login";
 		}
 		
-		List<BoardVO> boardList = boardService.getBoardList();
+		//List<BoardVO> boardList = boardService.getBoardList();
+		List<BoardVO> searchBoardList = boardService.getBoardListSearch(paramMap);
 		
 		/*
 		 * for(int i=0; i<boardList.size(); i+=1) {
 		 * System.out.println(boardList.get(i).toString()); }
 		 */
 		
-		model.addAttribute("boardList", boardList);
+		model.addAttribute("boardList", searchBoardList);
+		
+		if(paramMap.get("searchCondition") != null && !paramMap.get("searchCondition").equals("")) {
+			model.addAttribute("searchCondition", paramMap.get("searchCondition"));
+		}
 		
 		return "board/getBoardList";
 	}
@@ -92,12 +97,13 @@ public class BoardController {
 		return "redirect:getBoardList.do";
 	}
 	
-	@RequestMapping("getBoardListSearch.do")
-	public String getBoardListSearch(@RequestParam Map<String, String> paramMap,Model model) {
-		List<BoardVO> searchBoardList = boardService.getBoardListSearch(paramMap);
-		
-		model.addAttribute("boardList", searchBoardList);
-		return "board/getBoardList";
-	}
+	/*
+	 * @RequestMapping("getBoardListSearch.do") public String
+	 * getBoardListSearch(@RequestParam Map<String, String> paramMap,Model model) {
+	 * List<BoardVO> searchBoardList = boardService.getBoardListSearch(paramMap);
+	 * 
+	 * model.addAttribute("boardList", searchBoardList); return
+	 * "board/getBoardList"; }
+	 */
 
 }

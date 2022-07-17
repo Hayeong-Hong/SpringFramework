@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="join-form"/>
+		<item key="selection" value="btn-toolbar"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="btn-toolbar"/>
+			<item value="list"/>
+			<item value="boardList"/>
+			<item value="forEa"/>
+			<item value="end_time"/>
+			<item value="main"/>
+			<item value="hot_prod"/>
 			<item value="join-form"/>
 			<item value="css"/>
 			<item value="pwCheckResult"/>
@@ -16,12 +23,6 @@
 			<item value="userId"/>
 			<item value="index."/>
 			<item value="EUC-KR"/>
-			<item value="spring"/>
-			<item value="session"/>
-			<item value="doG"/>
-			<item value="Http"/>
-			<item value="doP"/>
-			<item value="http"/>
 		</list>
 		<list key="replacehistory">
 			<item value="checkIdbtn"/>

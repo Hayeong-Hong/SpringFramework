@@ -41,8 +41,33 @@
 					</c:choose>
 				</div>
 			</div>
-
-		</div>
+			
+				<div class="wrap" id="topMenu">
+		            <div class="logo">
+		                <a href="${pageContext.request.contextPath }/index.jsp"><img src="${pageContext.request.contextPath }/images/main_logo.png" alt="로고"></a>
+		            </div>
+		            <nav class="navbar navbar-expand-lg">
+		                <div class="container-fluid">
+		                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		                    <span class="navbar-toggler-icon"></span>
+		                  </button>
+		                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		                    <div class="navbar-nav justify-content-end">
+		                        <a class="nav-link" href="#">이용안내</a>
+		                        <img src="${pageContext.request.contextPath }/images/bar.png" alt="막대">
+		                        <a class="nav-link" href="${pageContext.request.contextPath }/item/getItemList.do">상품검색</a>
+		                        <img src="${pageContext.request.contextPath }/images/bar.png" alt="막대">
+		                        <a class="nav-link" href="#">상품등록</a>
+		                        <img src="${pageContext.request.contextPath }/images/bar.png" alt="막대">
+		                        <a class="nav-link" href="#">고객센터</a>
+		                        <img src="${pageContext.request.contextPath }/images/bar.png" alt="막대">
+		                        <a class="nav-link last-nav" href="#">나의경매</a>
+		                    </div>
+		                  </div>
+		                </div>
+		              </nav>
+	       		 	</div>
+				</div>
 	</header>
 </body>
 </html>

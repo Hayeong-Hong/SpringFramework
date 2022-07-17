@@ -33,11 +33,11 @@
 		]]>
 	</insert>
 
-	<select id="getBoardList" resultType="board">
+<!-- 	<select id="getBoardList" resultType="board">
 		<![CDATA[
 			SELECT * FROM T_BOARD
 		]]>
-	</select>
+	</select> -->
 
 	<select id="getBoard" parameterType="int" resultType="board">
 		<![CDATA[
@@ -85,7 +85,7 @@
 		<![CDATA[
 			SELECT * 
 				FROM T_BOARD
-				WHRER 1=1
+				WHERE 1=1
 		]]>
 			<if test="searchKeyword != null and searchKeyword != ''">
 				<if test="searchCondition == 'all'">

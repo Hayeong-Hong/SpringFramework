@@ -44,6 +44,10 @@
 			});
 		});
 	});
+	
+	$(function(){
+		$("#topMenu").hide();
+	});
 	</script>
 	<jsp:include page="${pageContext.request.contextPath }/header.jsp"></jsp:include>
 	 <main>

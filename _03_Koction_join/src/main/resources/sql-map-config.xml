@@ -12,10 +12,12 @@
 		<!-- VO 객체의 별칭 지정 -->
 		<typeAliases>
 			<typeAlias type="com.spring.boardweb.UserVO" alias="user"/>
+			<typeAlias type="com.spring.boardweb.ItemVO" alias="item"/>
 		</typeAliases>
 		
 		<!-- 쿼리문 작성할 때 매퍼 설정 -->
 		<mappers>
 			<mapper resource="mappings/user-mapping.xml"/>
+			<mapper resource="mappings/item-mapping.xml"/>
 		</mappers>
 	</configuration>

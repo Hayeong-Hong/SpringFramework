@@ -21,9 +21,9 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public List<BoardVO> getBoardList() {
+	public List<BoardVO> getBoardList(Map<String, String> paramMap) {
 		// TODO Auto-generated method stub
-		return boardDAO.getBoardList();
+		return boardDAO.getBoardListSearch(paramMap);
 	}
 
 	@Override

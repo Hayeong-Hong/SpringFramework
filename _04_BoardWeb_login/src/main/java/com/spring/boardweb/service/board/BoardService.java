@@ -9,7 +9,7 @@ public interface BoardService {
 
 	void insertBoard(BoardVO boardVO);
 
-	List<BoardVO> getBoardList();
+	List<BoardVO> getBoardList(Map<String, String> paramMap);
 
 	BoardVO getBoard(int boardSeq);
 

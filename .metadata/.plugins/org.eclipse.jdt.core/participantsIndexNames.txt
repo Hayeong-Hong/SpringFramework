@@ -1,4 +1,6 @@
 INDEX VERSION 1.131
+D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1808901748.index
+\_05_BoardWeb_paging\src\main\java
 D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1939924875.index
 \_03_Koction_join\src\main\java
 D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\516655838.index
@@ -27,15 +29,21 @@ D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\j
 \_02_BoardWeb_structure\src\main\java
 D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2267906527.index
 \_02_BoardWeb_structure\src\main\java
+D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\916828422.index
+\_05_BoardWeb_paging\src\main\java
 D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\192919289.index
 \_03_BoardWeb_join\src\main\java
 D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1507174110.index
 \_04_Koction_join\src\main\java
 D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3580840200.index
 \_04_Koction_join\src\main\java
+D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\14165286.index
+\_05_BoardWeb_paging\src\main\java
 D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\396187835.index
 \_03_BoardWeb_join\src\main\java
 D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3254442011.index
 \_01_BoardWeb_properties\src\main\java
+D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1569553316.index
+\_03_Koction_join\src\main\java
 D:\bitcamp\lecture\SpringFramework\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3473246451.index
 \_03_Koction_join\src\main\java
