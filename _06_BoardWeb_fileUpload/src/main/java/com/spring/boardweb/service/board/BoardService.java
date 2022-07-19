@@ -29,4 +29,6 @@ public interface BoardService {
 	void insertBoardFile(List<BoardFileVO> fileList);
 
 	List<BoardFileVO> getBoardFile(int boardSeq);
+
+	void deleteBoardFile(BoardFileVO boardFileVO);
 }

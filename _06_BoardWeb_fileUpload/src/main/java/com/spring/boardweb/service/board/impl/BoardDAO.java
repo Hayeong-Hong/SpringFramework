@@ -43,7 +43,12 @@ public class BoardDAO {
 	}
 	
 	public void deleteBoard(int boardSeq) {
+		BoardFileVO boardFileVO =new BoardFileVO();
+		boardFileVO.setBoardSeq(boardSeq);
+		mybatis.delete("BoardDAO.deleteBoardFile", boardFileVO);
+		
 		mybatis.delete("BoardDAO.deleteBoard", boardSeq);
+		// MySQL에서 해당 컬럼에 CASCADE설정 하면됨
 		mybatis.update("BoardDAO.updateBoardSeq", boardSeq);
 	}
 	
@@ -74,5 +79,11 @@ public class BoardDAO {
 	public List<BoardFileVO> getBoardFile(int boardSeq) {
 		// TODO Auto-generated method stub
 		return mybatis.selectList("BoardDAO.getBoardFile", boardSeq);
+	}
+
+	public void deleteBoardFile(BoardFileVO boardFileVO) {
+		// TODO Auto-generated method stub
+		mybatis.delete("BoardDAO.deleteBoardFile", boardFileVO);
+		mybatis.update("BoardDAO.updateBoardFileSeq", boardFileVO);
 	}
 }

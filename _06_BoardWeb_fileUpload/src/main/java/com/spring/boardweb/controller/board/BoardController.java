@@ -49,9 +49,10 @@ public class BoardController {
 		
 		int total = boardService.getBoardCnt(paramMap);
 		
-		for(int i=0; i < boardList.size(); i++) {
-			System.out.println(boardList.get(i).toString());
-		}
+		/*
+		 * for(int i=0; i < boardList.size(); i++) {
+		 * System.out.println(boardList.get(i).toString()); }
+		 */
 		
 		model.addAttribute("boardList", boardList);
 		model.addAttribute("pageMaker", new PageVO(cri, total));
@@ -118,7 +119,16 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/updateBoard.do")
-	public String updateBoard(BoardVO boardVO) {
+	public String updateBoard(BoardVO boardVO, HttpServletRequest request, MultipartHttpServletRequest multipartServletRequest) throws IOException {
+		FileUtils fileUtils = new FileUtils();
+		int boardSeq = boardVO.getBoardSeq();
+		
+		List<BoardFileVO> fileList = fileUtils.parseFileInfo(boardSeq, request, multipartServletRequest);
+		
+		if(!CollectionUtils.isEmpty(fileList)) {
+			boardService.insertBoardFile(fileList);
+		}
+		
 		boardService.updateBoard(boardVO);
 		
 		return "redirect:getBoardList.do";
@@ -163,5 +173,11 @@ public class BoardController {
 		}
 		
 		return new ResponseEntity<Resource>(resource, header,HttpStatus.OK);
+	}
+	
+	@RequestMapping("/deleteBoardFile.do")
+	@ResponseBody
+	public void deleteBoardFile(BoardFileVO boardFileVO) {
+		boardService.deleteBoardFile(boardFileVO);
 	}
 }
