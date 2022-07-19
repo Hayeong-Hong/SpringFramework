@@ -66,7 +66,7 @@
 							<a class="downlink" id="${file.fileSeq }" href="${file.fileName }">
 								${file.originalFileName }
 							</a>
-							<button type="button" id="btnDeleteFile" value="${file.fileSeq }">삭제</button>
+							<button type="button" onclick="deleteBoardFile('${file.fileSeq}')">삭제</button>
 							<br/>
 						</c:forEach>
 					</td>
@@ -94,6 +94,23 @@
 	<jsp:include page="${pageContext.request.contextPath }/footer.jsp"></jsp:include>
 	
 	<script>
+		function deleteBoardFile(fileSeq){
+			$.ajax({
+				url: '/board/deleteBoardFile.do',
+				type: 'post',
+				data: {
+						"boardSeq" : $("input[name='boardSeq']").val(),
+						"fileSeq" : fileSeq
+						},
+				success: function(){
+					location.reload();
+				},
+				error: function(e){
+					console.log(e);
+				}
+			});
+		};
+	
 		$(function() {
 			const loginUserId = '${loginUser.userId}';
 			const boardWriter = '${board.boardWriter}';
